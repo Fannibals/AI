@@ -1,4 +1,27 @@
 # 01
 111
-this is for 
+this is for just exercise
 
+1. Two Sum
+given an array of integers, return indices of numbers in the list
+
+for example 
+Given nums = [2, 7, 11, 15], target = 9,
+
+Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].
+
+python 3
+
+class Solution:
+    def twoSum(self, nums, target):
+        n = len(nums)
+        for i in range(n):
+            for x in range(n):
+                if nums[i]+nums[x] == target:
+                    a1 = i
+                    a2 = x
+                    break
+        if a1>a2:
+            return [a2,a1]
+        [a1,a2]
