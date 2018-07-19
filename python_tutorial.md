@@ -19,3 +19,17 @@
   * **_Press_** "Ctrl-c" to kill a running process
   * **_Append_** & to a command to run it in the background
   * **_fg_** brings a program running in the background to the foreground
+  
+  
+# The Emacs text editor
++ commands
+```
+[cs188-ta@nova ~/python_basics]$ emacs helloWorld.py
+```
++ useful commands
+  * **C-x C-s** Save the current file
+  * **C-x C-f** Open a file, or create a new file it if doesn't exist
+  * **C-k** Cut a line, add it to the clipboard
+  * **C-y** Paste the contents of the clipboard
+  * **C-_** Undo
+  * **C-g** Abort a half-entered command
