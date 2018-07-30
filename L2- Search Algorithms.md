@@ -1,26 +1,21 @@
 # Search Algorithms
 
 ## State Model &nbsp; _S(P)_
-+ **finite and discrete** state space S
-+ a known initial state <a href="https://www.codecogs.com/eqnedit.php?latex=\bg_white&space;s_{o}&space;\in&space;S" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\bg_white&space;s_{o}&space;\in&space;S" title="s_{o} \in S" /></a>
-+ a __set__ of goal states
-+ applicable actions for each state
-+ deterministic transition function s' = f(a, s)
-+ positive action costs c(a, s)
+<img src="https://github.com/Fannibals/AI/blob/master/pics/StateModel.png" alt="alt text" width="700" height="300">
 
-$$f(x)=w^Tx+b$$   
+ 
 
 ## Classical Planning
 + Basic State Model
     * directed graphs
 + search algo
     * Blind search vs. Heuristic (or informed) search
-        - Blind search
+        - Blind search : Only use the basic ingredients for general search algorithms
             + DFS
             + BFS
             + Uniform cost (Dijkstra)
             + Iterative Deepening (ID)
-        - Heuristic search
+        - Heuristic search: heuristic fucntions that estimate the distance to the goal
             + A*
             + IDA*
             + Hill Climbing
@@ -44,13 +39,20 @@ $$f(x)=w^Tx+b$$
             - has to be Systematic
 
 ## Terminology
-+ Search node
-+ Path cost
-+ Optimal cost
-+ Node expansion
-+ Search strategy
-+ Open list (Frontier)
-+ Closed list (explored set)
++ **Search node n**
+   - Contains a state reached by the search, plus information about how it was reached.
++ **Path cost g(n)**
+   - The cost of the path reaching n
++ **Optimal cost g***
+   - The cost of an optimal solution path. For a state s, g*(s) is the cost of a cheapest path reaching s.
++ **Node expansion**
+   - Generating all successors of a node
++ **Search strategy**
+   - Method for deciding which node is expanded next.
++ **Open list (Frontier)**
+   - Set of all nodes that currently are candidates for expansion.
++ **Closed list (explored set)**
+   - Set of all states that were already expanded. 
     * only used in graph search
         - not in tree search
 
