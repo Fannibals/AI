@@ -126,6 +126,8 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
   - **Complete**: yes when the branching factor is finite
   - **Optimal**: yes when the path cost is a nondecreasing function of the depth of the node.
   - **Time complexity**: O(b^d)
+   - the nodes on the bottom level(depth d) are generated once, those on the next-to-bottom level are generated twice, etc.
+   - the worst case: N(IDS) = (d)b + (d-1)b^2 + (d-2)b^3 +...+ (1)b^d , which is in O(b^d)
   - **Space complexity**: O(b*d)
   
 + Bi-directional search
