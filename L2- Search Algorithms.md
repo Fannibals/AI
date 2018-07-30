@@ -89,18 +89,20 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
 
 ## Blind search
 + No additioanal work for the programmer
-+ BrFS
-    * __low time complexity__
-        - Variant: Uniform cost search (Dijkstra)
-    * Guarantees
-        - complete: yes
-        - optimality: yes for uniform action costs
-            + 若所有边的长度相等，广度优先搜索算法是最佳解——亦即它找到的第一个解，距离根节点的边数目一定最少；但对一般的图来说，BFS并不一定回传最佳解。这是因为当图形为加权图（亦即各边长度不同）时，BFS仍然回传从根节点开始，经过边数目最少的解；而这个解距离根节点的距离不一定最短。这个问题可以使用考虑各边权值，BFS的改良算法成本一致搜寻法 (Uniform cost search, Dijkstra) 来解决。然而，若非加权图形，则所有边的长度相等，BFS就能找到最近的最佳解。
-    * Complexity
-        - space
-         + <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;O(b^{d})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;O(b^{d})" title="O(b^{d})" /></a>
-        - time
-         + O(|V| + |E|)
+
+### Breadth-First Search
++ <img src="https://github.com/Fannibals/AI/blob/master/pics/DFS.png" alt="alt text" width="700" height="400">
++ __low time complexity__
+ - Variant: Uniform cost search (Dijkstra)
++ Strategy: expand a shallowest node first
++ Implementation: Fringe is a FIFO queue
+
++ **properties**
+  - Complete: yes (s must be finite if a solution exists)
+  - Optimal: yes only if costs are same
+  - Time complexity:  <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;O(b^{d})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;O(b^{d})" title="O(b^{d})" /></a>
+  - Space complexity:  <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;O(b^{d})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;O(b^{d})" title="O(b^{d})" /></a>
+
 + DFS
     * __low space complexity__
     * Guarantees
