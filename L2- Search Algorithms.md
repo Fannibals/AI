@@ -1,6 +1,5 @@
 # Search Algorithms
 
-## State Model &nbsp; _S(P)_
 <img src="https://github.com/Fannibals/AI/blob/master/pics/StateModel.png" alt="alt text" width="700" height="300">
 
  
@@ -98,39 +97,37 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
 + Implementation: Fringe is a FIFO queue
 
 + **properties**
-  - Complete: yes (s must be finite if a solution exists)
-  - Optimal: yes only if costs are same
-  - Time complexity:  <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;O(b^{d})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;O(b^{d})" title="O(b^{d})" /></a>
-  - Space complexity:  <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;O(b^{d})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;O(b^{d})" title="O(b^{d})" /></a>
+  - **Complete**: yes (s must be finite if a solution exists)
+  - **Optimal**: yes only if costs are same
+  - **Time complexity**:  <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;O(b^{d})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;O(b^{d})" title="O(b^{d})" /></a>
+  - **Space complexity**:  <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;O(b^{d})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;O(b^{d})" title="O(b^{d})" /></a>
 
-+ DFS
-    * __low space complexity__
-    * Guarantees
-        - complete when __acyclic__
-            + if we record the visited nodes, can DFS be complete even if there is a cycle?
-                * if there are infinite nodes, DFS might get unlucky and follow one route that can visit infinite nodes. However, BFS goes down by levels, which means it is able to find shortest path. That is why even recording visited nodes still cannot guarantee DFS be complete when there is infinite nodes.
-        - not optimal
-    * complexity, m is the max depth reached
-        - space
-            + O(b*m)
-        - time
-            + worst: O(b^m), infinite
-            + best: O(b*l)
-+ Iterative deepening search (preferrd blind search method in large state spaces with unknown solution depth)
-    * low complexity in both time and space
-    * Uses depth-limited search as a sub-procedure
-    * Guarantees
-        - complete
-        - optimal
-            + better than DFS
-    * Complexity
-        - space
-            + O(b*d)
-            + better than BrFS
-        - time
-            + O(b^d)
+### Depth-First Search
++ <img src="https://github.com/Fannibals/AI/blob/master/pics/BFS.png" alt="alt text" width="700" height="400">
++ __low space complexity__
++ Strategy: expand a deepest node first
++ Implementation: Fringe is a LIFO stack
+
++ **properties**
+  - **Complete**: yes
+  - **Optimal**: no
+  - **Time complexity**: O(b^m)
+  - **Space complexity**: O(b*m)
+  
+### Iterative deepening search 
+### (preferrd blind search method in large state spaces with unknown solution depth)
++ <img src="https://github.com/Fannibals/AI/blob/master/pics/Iterative.png" alt="alt text" width="600" height="200">
++ low complexity in both time and space
++ Uses depth-limited search as a sub-procedure
++ **properties**
+  - **Complete**: yes when the branching factor is finite
+  - **Optimal**: yes when the path cost is a nondecreasing function of the depth of the node.
+  - **Time complexity**: O(b^m)
+  - **Space complexity**: O(b*m)
+  
 + Bi-directional search
-    * will not be examed
+  - will not be examed
+
 
 ## Heuristic search 启发式搜索
 + requires as additional input a heuristic function h
