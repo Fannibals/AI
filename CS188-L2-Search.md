@@ -106,7 +106,7 @@ goal test|  is (x,y) =END|  dots all false
   - 
   
 ### Iterative Deepening
-+ <img src="https://github.com/Fannibals/AI/blob/master/pics/Iterative.png" alt="alt text" width="600" height="450">
++ <img src="https://github.com/Fannibals/AI/blob/master/pics/Iterative.png" alt="alt text" width="600" height="250">
 + O(b * s) memory
 + O(b^s) running time 
 
