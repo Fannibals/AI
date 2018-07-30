@@ -1,13 +1,14 @@
 # Search Algorithms
 
-## State Model
-+ state space
-    * finite and discrete
-+ a initial state
+## State Model &nbsp; _S(P)_
++ **finite and discrete** state space S
++ a known initial state <a href="https://www.codecogs.com/eqnedit.php?latex=\bg_white&space;s_{o}&space;\in&space;S" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\bg_white&space;s_{o}&space;\in&space;S" title="s_{o} \in S" /></a>
 + a __set__ of goal states
 + applicable actions for each state
 + deterministic transition function s' = f(a, s)
-+ cost c(a, s)
++ positive action costs c(a, s)
+
+$$f(x)=w^Tx+b$$   
 
 ## Classical Planning
 + Basic State Model
