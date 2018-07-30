@@ -21,7 +21,7 @@
 + A solution is a sequence of actions which transforms the start state to a goal state.
 
 ## Example: Traveling in Romania
-<img src="https://github.com/Fannibals/AI/blob/master/pics/example1.png" alt="alt text" width="600" height="450">
++ <img src="https://github.com/Fannibals/AI/blob/master/pics/example1.png" alt="alt text" width="600" height="450">
 + State Space: cities
 + Successor function: roads, cost = distance
 + Start state: Arad
@@ -79,6 +79,7 @@ goal test|  is (x,y) =END|  dots all false
   - Exploration strategy
   
 ### Depth-First Search
++ <img src="https://github.com/Fannibals/AI/blob/master/pics/BFS.png" alt="alt text" width="800" height="450">
 + Strategy: expand a deepest node first
 + Implementation: Fringe is a LIFO stack
 
@@ -87,8 +88,8 @@ goal test|  is (x,y) =END|  dots all false
   - Optimal: no
   - Time complexity: O(b^m)
   - Space complexity: O(b*m)
-  
 ### Breadth-First Search
++ <img src="https://github.com/Fannibals/AI/blob/master/pics/DFS.png" alt="alt text" width="800" height="450">
 + Strategy: expand a shallowest node first
 + Implementation: Fringe is a FIFO queue
 
@@ -97,7 +98,7 @@ goal test|  is (x,y) =END|  dots all false
   - Optimal: yes only if costs are same
   - Time complexity: O(b^s)
   - Space complexity: O(b^s)
-  
+
 ### BFS vs. DFS
 + BFS
   - 
