@@ -109,11 +109,12 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
 + Implementation: Fringe is a LIFO stack
 
 + **properties**
-  - **Complete**: yes
+  - **Complete**: yes in grapth-search version and no in tree-search version
   - **Optimal**: no
-  - **Time complexity**: O(b^m)
-  - **Space complexity**: O(b*m)
-  
+  - **Time complexity**: O(b^d)
+  - **Space complexity**: O(b*d)
+
++ The embarrassing failure of depth-first search in infinite state spaces can be alleviated by supplying depth-first search with a predetermined depth limit l. That is, nodes at depth l are treated as if they have no successors. This approach is called **depth-limited search**. 
 ### Iterative deepening search 
 ### (preferrd blind search method in large state spaces with unknown solution depth)
 + <img src="https://github.com/Fannibals/AI/blob/master/pics/Iterative.png" alt="alt text" width="600" height="200">
@@ -122,8 +123,8 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
 + **properties**
   - **Complete**: yes when the branching factor is finite
   - **Optimal**: yes when the path cost is a nondecreasing function of the depth of the node.
-  - **Time complexity**: O(b^m)
-  - **Space complexity**: O(b*m)
+  - **Time complexity**: O(b^d)
+  - **Space complexity**: O(b*d)
   
 + Bi-directional search
   - will not be examed
