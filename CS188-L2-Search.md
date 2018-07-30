@@ -106,10 +106,12 @@ goal test|  is (x,y) =END|  dots all false
   - 
   
 ### Iterative Deepening
-O(b * s) memory
-O(b^s) running time 
++ <img src="https://github.com/Fannibals/AI/blob/master/pics/Iterative.png" alt="alt text" width="600" height="450">
++ O(b * s) memory
++ O(b^s) running time 
 
 ### Uniform Cost Search
++ <img src="https://github.com/Fannibals/AI/blob/master/pics/uniformcost.png" alt="alt text" width="600" height="450">
 + Strategy: expand a cheapest node first
 + Fringe is a priority queue 
 
