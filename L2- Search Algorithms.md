@@ -118,6 +118,8 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
 ### Iterative deepening search 
 ### (preferrd blind search method in large state spaces with unknown solution depth)
 + <img src="https://github.com/Fannibals/AI/blob/master/pics/Iterative.png" alt="alt text" width="600" height="200">
++ Starting from level 0, if the goal test is not true, move to the level 1 and do the DFS  
+  if still not find the key, move to the level 2 and so on.
 + low complexity in both time and space
 + Uses depth-limited search as a sub-procedure
 + **properties**
