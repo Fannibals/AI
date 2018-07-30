@@ -57,10 +57,8 @@
         - not in tree search
 
 ## world states vs. search states
-+ World state
-    * Situation in the world modelled by the planning task
-+ Search state
-    * Subproblem remaining to be solved
++ the **World state** includes all things related to this problem
++ the **Search state** keeps only the details needed for planning
 
 ## Progression vs. Regression
 + progression
@@ -83,25 +81,26 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
         + can find a solution
     - Optimality
 * Complexity
-    - time
-    - space
+    - time: measured in generated states
+    - space: measured in states
     * factors
-        - Branching factor
-        - Goal depth
+        - Branching factor b: how many successors does each state have?
+        - Goal depth d: The number of actions required to reach the shallowest goal state
 
 ## Blind search
++ No additioanal work for the programmer
 + BrFS
     * __low time complexity__
         - Variant: Uniform cost search (Dijkstra)
     * Guarantees
-        - complete
-        - optimal for uniform action cost
+        - complete: yes
+        - optimality: yes for uniform action costs
             + 若所有边的长度相等，广度优先搜索算法是最佳解——亦即它找到的第一个解，距离根节点的边数目一定最少；但对一般的图来说，BFS并不一定回传最佳解。这是因为当图形为加权图（亦即各边长度不同）时，BFS仍然回传从根节点开始，经过边数目最少的解；而这个解距离根节点的距离不一定最短。这个问题可以使用考虑各边权值，BFS的改良算法成本一致搜寻法 (Uniform cost search, Dijkstra) 来解决。然而，若非加权图形，则所有边的长度相等，BFS就能找到最近的最佳解。
     * Complexity
         - space
-            + O(b^d), O(|V| + |E|)
+         + <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;O(b^{d})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;O(b^{d})" title="O(b^{d})" /></a>
         - time
-            + O(b^d), O(|V| + |E|)
+         + O(|V| + |E|)
 + DFS
     * __low space complexity__
     * Guarantees
@@ -132,6 +131,7 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
     * will not be examed
 
 ## Heuristic search 启发式搜索
++ requires as additional input a heuristic function h
 + most common and overall most successful algorithms for classical planning
 + heuristic function  __estimate__ the distance (or __remaining cost__) to the goal
     * search prefer to explore states with small h
