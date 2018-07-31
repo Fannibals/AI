@@ -90,7 +90,7 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
 + No additioanal work for the programmer
 
 ### Breadth-First Search
-+ <img src="https://github.com/Fannibals/AI/blob/master/pics/DFS.png" alt="alt text" width="700" height="400">
++ <img src="https://github.com/Fannibals/AI/blob/master/pics/BFS.png" alt="alt text" width="700" height="400">
 + __low time complexity__
  - Variant: Uniform cost search (Dijkstra)
 + Strategy: expand a shallowest node first
@@ -103,7 +103,7 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
   - **Space complexity**:  <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;O(b^{d})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;O(b^{d})" title="O(b^{d})" /></a>
 
 ### Depth-First Search
-+ <img src="https://github.com/Fannibals/AI/blob/master/pics/BFS.png" alt="alt text" width="700" height="400">
++ <img src="https://github.com/Fannibals/AI/blob/master/pics/DFS.png" alt="alt text" width="700" height="400">
 + __low space complexity__
 + Strategy: expand a deepest node first
 + Implementation: Fringe is a LIFO stack
