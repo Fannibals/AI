@@ -79,7 +79,7 @@ goal test|  is (x,y) =END|  dots all false
   - Exploration strategy
   
 ### Depth-First Search
-+ <img src="https://github.com/Fannibals/AI/blob/master/pics/BFS.png" alt="alt text" width="700" height="400">
++ <img src="https://github.com/Fannibals/AI/blob/master/pics/DFS.png" alt="alt text" width="700" height="400">
 + Strategy: expand a deepest node first
 + Implementation: Fringe is a LIFO stack
 
@@ -89,7 +89,7 @@ goal test|  is (x,y) =END|  dots all false
   - Time complexity: O(b^m)
   - Space complexity: O(b*m)
 ### Breadth-First Search
-+ <img src="https://github.com/Fannibals/AI/blob/master/pics/DFS.png" alt="alt text" width="700" height="400">
++ <img src="https://github.com/Fannibals/AI/blob/master/pics/BFS.png" alt="alt text" width="700" height="400">
 + Strategy: expand a shallowest node first
 + Implementation: Fringe is a FIFO queue
 
