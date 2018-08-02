@@ -142,6 +142,7 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
 
 
 ## Heuristic search 启发式搜索
++ The objective of a heuristic is to produce a solution in a reasonable time frame that is good enough for solving the problem at hand
 + requires as additional input a heuristic function h
 + most common and overall most successful algorithms for classical planning
 + heuristic function  __estimate__ the distance (or __remaining cost__) to the goal
@@ -150,15 +151,18 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
 + remaining cost `h*`
     * ∞ if impossible
     * _perfect heuristic_ h = h*  
-+ property of `h`
++ **property of `h`** ???
     * can be
         - safe
+         - the heuristic value is infinite(there is no solution from that state)
         - goal-aware
+         - h(s) = 0 for all goal staes s is in SG
         - admissible
+            + always optimistic
             + never over-estimate
         - consistent
             + h diff <= action cost
-    * relationships between properties
+    * **relationships between properties**
         - `admissible -> goal-aware`
         - `admissible -> safe`
         - `consistent + goal aware -> admissible`
@@ -166,17 +170,23 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
     * the imformedness of `h`
     * the computational overhead of computing `h`
     * extreme cases
-        - `h = h*`
-        - `h = 0`
-
+        - `h = h*`: perfectly informed
+        - `h = 0`: No information at all
+### Heuristic Function
++ <img src ="https://github.com/Fannibals/AI/blob/master/pics/Heuristic.png" height = 220, width = 730>
++ h: S -> Ro+ and {max}
+ - map state S to a positive real value including the value 0 and infinite
++ h*: the star"*" means the optimal best value
+ - perfect heuristic == h*
+ - h+ is the heuristic function that is devised automatically
 ### systematic heuristic search
-+ Greedy Best-First Search
++ **Greedy Best-First Search**
     * __1/3 popular in satisﬁcing planning__
     * priority queue ordered by ascending __h(state(σ))__
         - priority queue
             + min heap
-    * complete for safe
-    * not optimal
+    * complete: YES for safe
+    * optimal: NO
         - even for perfect heuristic, (e.g., `start --1000-->goal` and `start --0--> goal`,) nothing prevents it from choosing the bad one
             + different costs, but same `h`, 0.
 + Weighted A*
@@ -193,10 +203,10 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
     * re-open for smaller g
         - recall dijkstra
     * terminology
-        - f-value
+        - f-value : f(s) = g(s)+h(s)
         - generated nodes
         - expanded nodes
-        - re-expanded nodes
+        - re-expanded nodes ???
     * property
         - complete
             + yes for safe (even without duplication detection)
