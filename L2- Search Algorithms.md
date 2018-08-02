@@ -25,6 +25,8 @@
     * Systematic search vs. Local search
         - Systematic search
             + consider a large number of search nodes simultaneously
+            + keeps some history of visited nodes
+            + BFS, DFS, IDS, Best-First, A*
         - Local search
             + work with one (or a few) candidate solutions (search nodes) at a time
         - can overlap
@@ -109,12 +111,15 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
 + Implementation: Fringe is a LIFO stack
 
 + **properties**
-  - **Complete**: yes in grapth-search version and no in tree-search version
-  - **Optimal**: no
+  - **Complete**: 
+   - NO, search branches may be infinitely long and there is no check for cycles along a branch
+   - YES when the state space is finite and acyclic
+  - **Optimal**: No, due to DFS is a way of "hoping to get lucky"
   - **Time complexity**: O(b^d)
   - **Space complexity**: O(b*d)
 
 + The embarrassing failure of depth-first search in infinite state spaces can be alleviated by supplying depth-first search with a predetermined depth limit l. That is, nodes at depth l are treated as if they have no successors. This approach is called **depth-limited search**. 
+
 ### Iterative deepening search 
 ### (preferrd blind search method in large state spaces with unknown solution depth)
 + <img src="https://github.com/Fannibals/AI/blob/master/pics/Iterative.png" alt="alt text" width="600" height="200">
@@ -124,12 +129,14 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
 + Uses depth-limited search as a sub-procedure
 + **properties**
   - **Complete**: yes when the branching factor is finite
+   - the **branching factor** is the **number of children at each node**, the outdegree.
   - **Optimal**: yes when the path cost is a nondecreasing function of the depth of the node.
   - **Time complexity**: O(b^d)
    - the nodes on the bottom level(depth d) are generated once, those on the next-to-bottom level are generated twice, etc.
    - the worst case: N(IDS) = (d)b + (d-1)b^2 + (d-2)b^3 +...+ (1)b^d , which is in O(b^d)
   - **Space complexity**: O(b*d)
-  
+
++ IDS is the preferred search method in large state spaces with unknown solution depth
 + Bi-directional search
   - will not be examed
 
@@ -235,5 +242,4 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
     * cons
         - need `h`
 
-## Properties of Search Algorithms
-![blind.vs.informed](./pics/blind.vs.informed.png)
+
