@@ -151,17 +151,19 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
 + remaining cost `h*`
     * ∞ if impossible
     * _perfect heuristic_ h = h*  
-+ **property of `h`** ???
++ **property of `h`** these propoerties make sure that A* is always optimistic
     * can be
         - safe
          - the heuristic value is infinite(there is no solution from that state)
         - goal-aware
          - h(s) = 0 for all goal staes s is in SG
         - admissible
-            + always optimistic
-            + never over-estimate
+            + An admissible heuristic is one that never overestimates the cost to reach the goal.
+            + always optimistic, never over-estimate
         - consistent
+            + required only for applications of A∗ to graph search.
             + h diff <= action cost
+            + h(n) ≤ c(n, a, n') + h(n') .
     * **relationships between properties**
         - `admissible -> goal-aware`
         - `admissible -> safe`
