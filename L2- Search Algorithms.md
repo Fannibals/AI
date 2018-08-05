@@ -1,6 +1,6 @@
 # Search Algorithms
 
-<img src="https://github.com/Fannibals/AI/blob/master/pics/StateModel.png" alt="alt text" width="700" height="300">
+<img src="https://github.com/Fannibals/AI/blob/master/pics/StateModel.png" alt="alt text" width="600" height="250">
 
  
 
@@ -194,7 +194,12 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
 + Weighted A*
     * __1/3 popular in satisﬁcing planning__
     * priority queue ordered by ascending __g(state(σ)) + W*h(state(σ))__
-    * For W > 1, weighted A* is bounded suboptimal: if h is admissible, then the solutions returned are at most a factor W more costly than the optimal ones.
+    * For W > 1, weighted A* is **bounded suboptimal**: if h is admissible, then the solutions returned are at most a factor W more costly than the optimal ones.
+    * |W|Weighted A* behaves like|
+      | ---|---|
+      |0| Uniform-cost search |
+      |1|A*|
+      |maximum| greedy best serach|
 + A*
     * __most popular in optimal planning,__ rarely used in satisﬁcing planning
     * combine best-first and dijktra
@@ -206,18 +211,24 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
         - recall dijkstra
     * terminology
         - f-value : f(s) = g(s)+h(s)
-        - generated nodes
-        - expanded nodes
-        - re-expanded nodes ???
+        - generated nodes: nodes that are in the open list
+        - expanded nodes: in closed list -- already have children
+        - re-expanded nodes: already expanded but after comparing these nodes are more cheaper, so expand them again.
     * property
         - complete
             + yes for safe (even without duplication detection)
         - optimal
             + yes for admissible (even without duplication detection)
+            + proof: https://docs.google.com/document/d/12upePheGQxXKQQ3laxtMeB8SxnaxkE-NUiQlwnaTpY4/edit
     * if `h = 0`
         - _A*_ becomes __uniform-cost__
-    * If h is admissible and consistent, then A∗ never re-opens a state.
-        - then can simplify the algorithm
+    * Implementation
+     - Popular method: 
+       - whenever you have a plato(a set of state that have the same value)
+       - break tie with smaller h-value
+     - If h is admissible and consistent ⇒ A* never re-opens a state.
+       - whenever A* finds a path to the state, you will guarantee that there is no cheaper one that can get in there.
+     - Common, hard to spot bug: check duplicates at the wrong point.
 + IDA*, depth-ﬁrst branch-and-bound search, breadth-ﬁrst heuristic search ...
 
 ### local heuristic search
@@ -236,6 +247,7 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
     * __不维护搜索树__ (_space complexity 与 `d` 无关?_)，只记录当前状态和目标函数值，不考虑与当前状态不相邻的状态
 + enforced hill-climbing
     * __1/3 popular in satisﬁcing planning__
+    * makes sense only if h(s)>0
     * Breadth-ﬁrst search for state with strictly smaller h-value.
     * not optimal
     * not complete in general, yes under particular circumstance. Assuming `h` goal-aware
@@ -253,5 +265,9 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
         - typically more effective in practice
     * cons
         - need `h`
+        
 
+## Properties of Search Algorithms
+
+<img src="https://github.com/Fannibals/AI/blob/master/pics/SearchSummary.png" width="600" height="250">
 
