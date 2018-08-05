@@ -269,5 +269,5 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
 
 ## Properties of Search Algorithms
 
-<img src="https://github.com/Fannibals/AI/blob/master/pics/SearchSummary.png" width="600" height="250">
+<img src="https://github.com/Fannibals/AI/blob/master/pics/SearchSummary.png" width="600" height="300">
 
