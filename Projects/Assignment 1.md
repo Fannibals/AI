@@ -157,7 +157,35 @@ while not frontier.empty():
 ```  
   
   
-  
+## Q1
+### first try
+```
+    startState = problem.getStartState()
+    stack = util.Stack()
+    explored = []
+    action=[]
+    stack.push(startState)
+
+    while not stack.isEmpty():
+        current = stack.pop()
+        explored.append(current[0])
+        if problem.isGoalState(current[0]):
+            break
+        action.append(current[1])
+        sList = problem.getSuccessors(current[0])
+        for nextNode in sList:
+            if nextNode in explored:
+                stack.push(nextNode[0],nextNode[1])
+    if stack.isEmpty():
+        print(1)
+    else:
+        for i in stack:
+            action.append(i[1])
+        
+    return action.reverse()
+    
+    util.raiseNotDefined()
+```
   
   
   
