@@ -186,6 +186,29 @@ while not frontier.empty():
     
     util.raiseNotDefined()
 ```
+
+
+```
+BFS
+    currentNode= problem.getStartState()
+    queue = util.Queue()
+    visited = {}
+    queue.push(currentNode)
+    visited[currentNode]=[]
+
+    while not queue.isEmpty():
+        current = queue.pop()
+        if problem.isGoalState(current):
+            currentNode = current
+            break
+
+        nextMoves = problem.getSuccessors(current)
+        for nextNode in nextMoves:
+            if nextNode[0] not in visited:
+                queue.push(nextNode[0])
+                visited[nextNode[0]]=visited[current]+[nextNode[1]]
+    return visited[currentNode]
+```
   
   
   
