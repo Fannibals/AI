@@ -1,7 +1,7 @@
 # MDP, Markov Decision Process
 
 ## Classical planning
-+ deterministic action -> non-deterministic (but with probability)
++ **deterministic action** -> **non-deterministic (but with probability)**
 + static environment
     * Environments change only as the result of an action
 + perfect knowledge (full observability)
