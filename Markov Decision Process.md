@@ -44,6 +44,9 @@ The most common formulation of MDPs is a Discounted-Reward Markov Decision Proce
             (sum(all states)
                 (P(s,a,s')*(reward(s,a,s')+γV(s'))))
         ```
+    - processes:
+      - 1) set v(s) as 0 for every state
+      - 2) loop the Bellman equation for calculating the max one 
     - = `max(a in actions)(Q(s, a))`
         + Q-value: `Q(s, a)`
             + .
