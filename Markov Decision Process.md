@@ -10,7 +10,16 @@
     * omnipotence
 
 ## Markov Decision Process (MDP) 
-The most common formulation of MDPs is a Discounted-Reward Markov Decision Process. Optimal solutions maximise the expected discounted __accumulated__ reward from the initial state _s_0_.
+
++ 马尔可夫模型的几类子模型
+
+| | 不考虑动作| 考虑动作|
+|--- |----|----|
+| 状态完全可见	|马尔科夫链(MC)|	马尔可夫决策过程(MDP)| 
+| 状态不完全可见	| 隐马尔可夫模型(HMM)	| 不完全可观察马尔可夫决策过程(POMDP)|
+
+
++ The most common formulation of MDPs is a Discounted-Reward Markov Decision Process. Optimal solutions maximise the expected discounted __accumulated__ reward from the initial state _s_0_.
 
 + transition probability
 + policy, π
