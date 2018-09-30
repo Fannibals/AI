@@ -1,5 +1,6 @@
 # MDP, Markov Decision Process
 
+https://zhuanlan.zhihu.com/p/25498081
 ## Classical planning
 + **deterministic action** -> **non-deterministic (but with probability)**
 + static environment
