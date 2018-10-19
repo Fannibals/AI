@@ -84,9 +84,9 @@ Search Nodes = Parent + Action + Cost + Search States =  Search states + info on
 * Complexity
     - time: measured in generated states
     - space: measured in states
-    * factors
-        - Branching factor b: how many successors does each state have?
-        - Goal depth d: The number of actions required to reach the shallowest goal state
+* factors
+    - Branching factor b: how many successors does each state have?
+    - Goal depth d: The number of actions required to reach the shallowest goal state
 
 ## Blind search
 + No additioanal work for the programmer
